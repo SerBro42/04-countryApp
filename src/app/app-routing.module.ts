@@ -9,11 +9,14 @@ módulo especializado en navegación. El comodín '**' significa que en caso de 
 el URL, se redirige a 'home' */
 /* El path 'countries' es un caso especial. Llamamos a un módulo de rutas hijo desde este módulo
 de rutas padre mediante loadChildren, que tiene una sintaxis especial. Esto se llama 'LazyLoad' */
+/* Cambiamos el path comodín para que nos redirija al módulo de rutas secundario
+(countries-routing). Hay que modificar el propio countries-routing.module para que este cambio
+se haga efectivo. Comentamos 'home'. */
 const routes: Routes = [
-  {
-    path: 'home',
-    component: HomePageComponent
-  },
+  // {
+  //   path: 'home',
+  //   component: HomePageComponent
+  // },
   {
     path: 'about',
     component: AboutPageComponent
@@ -28,7 +31,7 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'home'
+    redirectTo: 'countries'
   }
 ];
 
