@@ -28,7 +28,8 @@ const routes: Routes = [
 
 /* El tipo de import que hagamos dependerá de si este es nuestro módulo de rutas principal o uno
 secundario. Si es el principal (como es nuestro caso), se usa forRoot. De lo contrario, se usa
-forChild. Pasamos como parámetro la definición de nuestras rutas (el array de objetos) */
+forChild. Es imprescindible tener en la aplicación al menos el módulo de rutas principal. Pasamos
+como parámetro la definición de nuestras rutas (el array de objetos) */
 @NgModule({
   imports: [
     RouterModule.forRoot( routes )
