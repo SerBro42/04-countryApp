@@ -1,5 +1,9 @@
+<!-- Definimos el @Output aquí, porque es el componente hijo de nuestras páginas. Emite un valor
+ genérico que puede ser usado por cualquiera de los tres posibles componentes padres -->
 <input
   type="text"
   [placeholder]="placeholder"
   class="form-control"
+  (keyup.enter)="emitGenericValue( txtInput.value )"
+  #txtInput
 >
