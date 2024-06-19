@@ -7,6 +7,8 @@ import { ContactPageComponent } from './shared/pages/contact-page/contact-page.c
 /* Creamos este archivo con el propósito de guardar las rutas y URLs de la aplicación. Será nuesto
 módulo especializado en navegación. El comodín '**' significa que en caso de no tener nada en
 el URL, se redirige a 'home' */
+/* El path 'countries' es un caso especial. Llamamos a un módulo de rutas hijo desde este módulo
+de rutas padre mediante loadChildren, que tiene una sintaxis especial. Esto se llama 'LazyLoad' */
 const routes: Routes = [
   {
     path: 'home',
@@ -19,6 +21,10 @@ const routes: Routes = [
   {
     path: 'contact',
     component: ContactPageComponent
+  },
+  {
+    path: 'countries',
+    loadChildren: () => import('./countries/countries.module').then( m => m.CountriesModule )
   },
   {
     path: '**',
