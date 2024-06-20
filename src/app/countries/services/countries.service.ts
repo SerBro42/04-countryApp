@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Country } from '../interfaces/country';
 
 @Injectable({providedIn: 'root'})
-export class ServiceNameService {
+export class CountriesService {
 
   /* La URL https://restcountries.com/v3.1/capital/{capital} fue obtenida de la web REST
   Countries */
