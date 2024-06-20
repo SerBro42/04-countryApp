@@ -28,6 +28,27 @@ export class CountriesService {
       .pipe(
         catchError( error => of([]) )
       );
+  }
+
+  searchCountry( searchTerm: string ): Observable<Country[]> {
+
+    const url = `${ this.apiUrl }/name/${ searchTerm }`;
+
+    return this.http.get<Country[]>( url )
+      .pipe(
+        catchError( error => of([]) )
+      );
+
+  }
+
+  searchRegion( searchTerm: string ): Observable<Country[]> {
+
+    const url = `${ this.apiUrl }/region/${ searchTerm }`;
+
+    return this.http.get<Country[]>( url )
+      .pipe(
+        catchError( error => of([]) )
+      )
 
   }
 
