@@ -12,6 +12,15 @@ export class CountriesService {
 
   constructor(private http: HttpClient) { }
 
+  searchCountryByAlphaCode( code: string ): Observable<Country[]> {
+    const url = `${ this.apiUrl }/alpha/${ code }`;
+
+    return this.http.get<Country[]>( url )
+      .pipe(
+        catchError( () => of([]) )
+      );
+  }
+
   /* La función searchCapital usa un HttpClient para conectarse con la API restcountries y
    devuelve un observable en forma de array de países */
   /* Usamos el método .pipe propio de rxjs para hacer diversas operaciones con los datos del
